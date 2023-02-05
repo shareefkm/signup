@@ -28,10 +28,16 @@
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </li>
       </ul>
-      {{!-- <form class="d-flex" action="./login"> --}}
-        {{!-- <button class="btn btn-success" type="submit">Login</button> --}}
+      {{#if email}}
+         <a href="./logout"class="btn btn-success" type="submit">Logout</a>
+         {{else}}
         <a href="./login"class="btn btn-success" type="submit">Login</a>
-      {{!-- </form> --}}
+      {{/if}}
     </div>
   </div>
 </nav>
+{{#if email}}
+<div class="row p-0 m-0 bg-secondary main">
+  <h1 class="d-flex justify-content-center p-5 text-white">Welcome to homePage</h1>
+</div>
+{{/if}}
