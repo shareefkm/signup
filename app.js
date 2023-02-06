@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
+const nocache=require('nocache');
 
 var indexRouter = require('./routes/index');
 
@@ -18,6 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(nocache());
 app.use(session({secret:"Key",cookie:{maxAge:300000}}))
 
 app.use('/', indexRouter);

@@ -9,7 +9,7 @@ let login={
 /* GET home page. */
 router.get('/', function(req, res, next) {
   let email = req.session.email;
-  res.render('index', { title: 'Login',email});
+    res.render('index', { title: 'Login',email});
 });
 router.get('/login',(req,res,next)=>{
   if(req.session.loggedIn){
@@ -18,6 +18,7 @@ router.get('/login',(req,res,next)=>{
     res.render('login',{"passwordnErr":req.session.passwordnErr,"emailErr":req.session.emailErr})
     req.session.passwordnErr=false;
     req.session.emailErr=false;
+
   }
 });
 router.post('/submit',(req,res)=>{
